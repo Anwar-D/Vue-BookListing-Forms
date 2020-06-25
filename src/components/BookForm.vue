@@ -23,23 +23,23 @@
     <button type="submit" name="button">Add Book</button>
  </form>
 </template>
-@@ -12,13 +30,17 @@ export default {
- props: ["books"],
- data() {
-   return {
-     bookTitle: "",
-     bookAuthor: ""
-     bookData: {
-       bookTitle: "",
-       bookAuthor: "",
-       finishedReading: false,
-       ownership: []
-     }
-   };
- },
+
+<script>
+export default {
+  name: "BookForm",
+  props: ["books"],
+  data() {
+    return {
+    bookData: {
+        bookTitle: "",
+        bookAuthor: "",
+        finishedReading: false,
+        ownership: []
+      }
+    };
+  },
  methods: {
-    bookSubmit(bookTitle, bookAuthor) {
-      this.$emit("addBook", bookTitle, bookAuthor);
+
     bookSubmit(bookData) {
       this.$emit("addBook", bookData);
     }
