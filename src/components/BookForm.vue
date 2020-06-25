@@ -11,6 +11,12 @@ export default {
   name: "BookForm",
   props: ["books"],
   data() {
+  bookData: {
+        bookTitle: "",
+        bookAuthor: "",
+        finishedReading: false,
+        ownership: []
+      }
     return {
       bookTitle: "",
       bookAuthor: ""
