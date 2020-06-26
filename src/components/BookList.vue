@@ -2,55 +2,54 @@
   <div>
     <h1>{{title}}</h1>
     <ul class="exists">
-      <book-item v-for='book in books' :key='book.id' :book='book'></book-item>
- </ul>
- <br><hr>
- <book-form @addBook='appendBook'></book-form>
+    <book-item v-for='book in books' :key='book.id' :book='book'></book-item>
+  </ul>
+  <br><hr>
+  <book-form @addBook='appendBook'></book-form>
 </div>
 </template>
 
 <script>
 import BookItem from "./BookItem";
 import BookForm from "./BookForm";
-
-
 export default {
-   name: "BookList",
+name: "BookList",
   data() {
     return {
     title: "All Books",
-    states: ["Want to Read", "Read", "Reading"],
+      states: ["Want to Read", "Read", "Reading"],
       books: [
       {
-       title: "Self-Reliance",
-       author: "Ralph Waldo Emerson",
-       finishedReading: true
-     },
-     {
-       title: "American Gods",
-       author: "Neil Gaiman",
-       finishedReading: false
-     },
-     {
-       title: "Amusing Ourselves to Death",
-       author: "Neil Postman",
-       finishedReading: true
-     }
-   ]
- };
-},
-components: {
- BookItem,
- BookForm
-},
-appendBook(bookData) {
-    this.books.push({
-      title: bookData.bookTitle,
-      author: bookData.bookAuthor,
-      finishedReading: bookData.finishedReading
-    });
+         title: "Self-Reliance",
+         author: "Ralph Waldo Emerson",
+         finishedReading: true
+       },
+       {
+         title: "American Gods",
+         author: "Neil Gaiman",
+         finishedReading: false
+       },
+       {
+         title: "Amusing Ourselves to Death",
+         author: "Neil Postman",
+         finishedReading: true
+       }
+     ]
+   };
+ },
+ components: {
+   BookItem,
+   BookForm
+  },
+  methods: {
+  appendBook(bookData) {
+      this.books.push({
+        title: bookData.bookTitle,
+        author: bookData.bookAuthor,
+        finishedReading: bookData.finishedReading
+      });
+    }
   }
-}
 };
 </script>
 
@@ -63,7 +62,6 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-
 li {
   display: block;
   margin: 0 10px;
