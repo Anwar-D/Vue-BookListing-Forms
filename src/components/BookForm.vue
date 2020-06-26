@@ -1,4 +1,3 @@
-<template>
 <form v-on:submit.prevent="bookSubmit(bookData)" class="" action="#" method="post">
     <input v-model="bookData.bookTitle" type="text" name="title" value="" placeholder="Book Title">
     <input v-model="bookData.bookAuthor" type="text" name="author" value="" placeholder="Book Author">
@@ -39,9 +38,9 @@ export default {
   },
   methods: {
   bookSubmit(bookData) {
-     this.$emit("addBook", bookData);
-   }
- }
+      this.$emit("addBook", bookData);
+    }
+  }
 };
 </script>
 <style>
